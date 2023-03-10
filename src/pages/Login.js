@@ -1,6 +1,21 @@
-import React from 'react'
+import {useState} from 'react'
 import login from '../styles/login.module.css';
-const Login = () => {
+import { signInWithGoogle } from '../firebase/firebaseConfig';
+import { useNavigate } from 'react-router-dom';
+const Login = ({setUserDetails}) => {
+   const navigate = useNavigate();
+    const userLogin = async () => {
+        try {
+            const result = await signInWithGoogle()
+            const name = result.user.displayName;
+            const email = result.user.email;
+            const profile = result.user.photoURL
+            setUserDetails({name,email,profile});
+            navigate('/dashboard')
+        } catch (error) {
+            console.log(error)
+        }
+    }
   return (
     <div>
         <div className={login.mainContainer}>
@@ -44,7 +59,7 @@ const Login = () => {
                         <p>OR</p>
                         <span></span>
                     </div>
-                    <button className={login.signBtn}>
+                    <button className={login.signBtn} onClick={userLogin}>
                         <img src={process.env.PUBLIC_URL + '/images/google.png'} alt="" />
                         <span>Log in with Google</span>
                     </button>
