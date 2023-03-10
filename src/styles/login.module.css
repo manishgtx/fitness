@@ -2,6 +2,12 @@
 .container {
     position: relative;
 }
+
+@media screen and (min-width: 992px) {
+    .container {
+        display: none;
+    }
+}
 .overlay {
     position: absolute;
     top: 0;
@@ -31,12 +37,81 @@
     justify-content: space-between;
 }
 
-.form h4 {
+@media screen and (min-width: 992px) {
+    .form {
+        position: static;
+        border-radius: 0;
+        width: 50%;
+        min-height: 100vh;
+        background-color: #1E1E1E;
+    }
+}
+
+.form .titleMobile {
     font-size: 18px;
     font-family: 800;
     color: white;
     letter-spacing: 1px;
     margin-bottom: 12px;
+}
+
+.desktopLogoContainer {
+    display: none;
+}
+@media screen and (min-width: 992px) {
+    .desktopLogoContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        color: white;
+        margin-top: 100px;
+    }
+    .desktopLogoContainer h2 {
+        font-weight: 700;
+        font-size: 26px;
+    }
+    .desktopLogoContainer h2 span{
+        color: #FF8D24;
+    }
+
+}
+
+.form .titleDesktop {
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    
+}
+
+.desktopInfo {
+    display: none;
+}
+@media screen and (min-width: 992px) {
+    .desktopInfo {
+        display: block;
+        font-family: 'DM Sans', sans-serif;
+        text-align: center;
+        margin-bottom: 76px;
+        margin-top: 115px;
+    }
+
+}
+
+.desktopInfo p{
+    font-size: 16px;
+    line-height: 18px;
+    color: #676767;
+
+}
+
+@media screen and (min-width:992px) {
+    .form .titleMobile {
+        display: none;
+    }
+    .form .titleDesktop {
+        display: block;
+    }
 }
 
 .inputContainer {
@@ -48,6 +123,21 @@
     color: white;
     font-size: 18px;
     gap: 20px;
+    margin-bottom: 45px;
+}
+
+@media screen and (min-width: 992px) {
+    .inputContainer {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .or {
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .inputContainer span{
@@ -75,6 +165,12 @@
     margin-top: 12px;
 }
 
+@media screen and (min-width: 992px) {
+    .or {
+        margin-bottom: 55px;
+    }
+}
+
 .or p {
     color: white;
 }
@@ -99,6 +195,16 @@
     font-weight: 500;
     margin-top: 12px;
     font-size: 14px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+    .signBtn {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+    }
 }
 
 .signLink {
@@ -109,13 +215,22 @@
     font-family: 'DM Sans', sans-serif;
 }
 
+@media screen and (min-width:992px) {
+    .signLink {
+        display: none;
+    }
+}
+
 .signLink span {
     color: #ff8d24;
     cursor: pointer;
 }
 
-.continue {
 
+@media screen and (min-width: 992px) {
+    .continue {
+        display: none;
+    }
 }
 
 .continue p {
@@ -138,4 +253,74 @@
     font-family: 'DM Sans', sans-serif;
 }
 
+/* Desktop Header */
 
+
+@media screen and (min-width: 992px) {
+    .mainContainer {
+        display: flex;
+    }
+
+}
+
+.headerWrapper {
+    display: none;
+}
+@media screen and (min-width: 992px) {
+    .headerWrapper {
+        width: 50%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #272727;
+    }
+}
+
+
+.header {
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.header div img {
+    margin-bottom: 110px;
+}
+
+.header h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+}
+
+.header p {
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 473px;
+    text-align: center;
+}
+
+.continueDesktop {
+    display: none
+}
+
+@media screen and (min-width: 992px) {
+    .continueDesktop {
+        display: block;
+        text-align: center;
+    }
+    .continueDesktop button{
+        background-color: #ff8d24;
+        width: 400px;
+        color: white;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 12px;
+        padding: 15px 93px;
+        border: none;
+        margin-bottom: 55px;
+    }
+}
